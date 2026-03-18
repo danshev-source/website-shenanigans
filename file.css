@@ -81,7 +81,7 @@ nav ul a:hover { color: #b8d4e0; }
 .btn-red { background: var(--red); border-color: var(--red); color: #fff; }
 .btn-red:hover { background: #a93226; border-color: #a93226; color: #fff; }
 
-/* COOKIE BANNER */
+/* Cookie*/
 .cookie-banner {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
   background: var(--bg-mid);
