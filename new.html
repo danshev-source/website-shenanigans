@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Data — Your Digital Footprint</title>
+  <link rel="stylesheet" href="file.css">
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a class="nav-logo" href="#">NEXUS<span>DATA</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#quiz">Assessment</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#reveal">Your Profile</a></li>
+  </ul>
+</nav>
+
+<!-- ── COOKIE BANNER ────────────────────────────────────────── -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>
+    NexusData and its 847 trusted partners use cookies to personalize content, measure performance,
+    and build a comprehensive profile of your interests, habits, location patterns, and behavioural
+    tendencies. This data may be shared with advertisers, data brokers, government agencies, and
+    affiliated third parties. By continuing to use this site you agree to our
+    <a href="#">Privacy Policy</a> (31 pages), <a href="#">Terms of Service</a> (54 pages),
+    and <a href="#">Cookie Manifest</a> (12 pages). These agreements are legally binding.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn" onclick="handleCookie('declined')">Manage Preferences</button>
+    <button class="btn btn-red" onclick="handleCookie('accepted')">Accept All</button>
+  </div>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section id="about" style="padding-top: 6rem; min-height: 80vh; display: flex; align-items: center;">
+  <div class="container">
+    <p class="mono text-red" style="margin-bottom: 1rem; letter-spacing: 0.2em;">// NEXUSDATA SOLUTIONS — EST. 2031</p>
+    <h1>Your Data.<br>Working For <span class="text-red">Us.</span></h1>
+    <p style="max-width: 50ch; margin-top: 1.5rem; color: var(--text-dim); font-size: 1.1rem;">
+      <!-- YOUR INTRO PARAGRAPH HERE — what is a digital footprint, why it matters -->
+      [Your intro text here]
+    </p>
+    <p style="max-width: 50ch; color: var(--text-dim); font-size: 1.1rem;">
+      <!-- YOUR SECOND PARAGRAPH HERE — who profits, the industry scale -->
+      [Second paragraph here]
+    </p>
+    <p style="max-width: 50ch; color: var(--text-dim); font-size: 1.1rem;">
+      <!-- YOUR THIRD PARAGRAPH HERE — why this matters, call to action -->
+      [Third paragraph here]
+    </p>
+    <a href="#quiz" class="btn btn-red mt-4" style="display: inline-block;">Begin Assessment →</a>
+  </div>
+</section>
+
+<!--info gather-->
+<section id="quiz">
+  <div class="container">
+    <h2 class="mb-4">Habit Assessment</h2>
+    <p class="mono text-dim" style="margin-bottom: 2rem;">// Select all that apply. This data will be used to personalize your experience.</p>
+
+    <div class="progress-bar" style="height:2px; background:var(--steel-deep); margin-bottom:2.5rem;">
+      <div class="progress-fill" id="progressFill" style="width:0%; height:100%; background:var(--steel-dim); transition: width 0.4s;"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="quiz-step" id="step1">
+      <span class="quiz-label">01 — Which platforms do you use regularly?</span>
+      <div class="quiz-options">
+        <input type="checkbox" id="q1_google" name="q1" value="Google"><label for="q1_google">Google</label>
+        <input type="checkbox" id="q1_meta" name="q1" value="Facebook / Instagram"><label for="q1_meta">Facebook / Instagram</label>
+        <input type="checkbox" id="q1_tiktok" name="q1" value="TikTok"><label for="q1_tiktok">TikTok</label>
+        <input type="checkbox" id="q1_amazon" name="q1" value="Amazon"><label for="q1_amazon">Amazon</label>
+        <input type="checkbox" id="q1_youtube" name="q1" value="YouTube"><label for="q1_youtube">YouTube</label>
+      </div>
+      <button class="btn" onclick="nextStep(1)">Continue →</button>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-step hidden" id="step2">
+      <span class="quiz-label">02 — Do you use any of these?</span>
+      <div class="quiz-options">
+        <input type="checkbox" id="q2_fitness" name="q2" value="fitness tracker"><label for="q2_fitness">Fitness Tracker</label>
+        <input type="checkbox" id="q2_speaker" name="q2" value="smart speaker"><label for="q2_speaker">Smart Speaker</label>
+        <input type="checkbox" id="q2_loyalty" name="q2" value="loyalty / rewards cards"><label for="q2_loyalty">Loyalty Cards</label>
+        <input type="checkbox" id="q2_none" name="q2" value="none of these"><label for="q2_none">None of these</label>
+      </div>
+      <button class="btn" onclick="nextStep(2)">Continue →</button>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-step hidden" id="step3">
+      <span class="quiz-label">03 — How do you usually pay online?</span>
+      <div class="quiz-options">
+        <input type="checkbox" id="q3_card" name="q3" value="saved card / tap"><label for="q3_card">Saved Card / Tap</label>
+        <input type="checkbox" id="q3_paypal" name="q3" value="PayPal / Apple Pay"><label for="q3_paypal">PayPal / Apple Pay</label>
+        <input type="checkbox" id="q3_cash" name="q3" value="cash when possible"><label for="q3_cash">Cash when possible</label>
+      </div>
+      <button class="btn" onclick="nextStep(3)">Continue →</button>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-step hidden" id="step4">
+      <span class="quiz-label">04 — Do you read privacy policies before agreeing?</span>
+      <div class="quiz-options">
+        <input type="checkbox" id="q4_never" name="q4" value="never reads privacy policies"><label for="q4_never">Never</label>
+        <input type="checkbox" id="q4_sometimes" name="q4" value="sometimes skims privacy policies"><label for="q4_sometimes">Sometimes</label>
+        <input type="checkbox" id="q4_yes" name="q4" value="reads privacy policies"><label for="q4_yes">Yes</label>
+      </div>
+      <button class="btn" onclick="nextStep(4)">Continue →</button>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-step hidden" id="step5">
+      <span class="quiz-label">05 — Enter a username you use online.</span>
+      <p class="mono text-dim" style="font-size:0.75rem; margin-bottom:0.75rem;">// For cross-platform profile matching purposes.</p>
+      <input type="text" id="usernameInput" placeholder="e.g. shadowfox99" style="max-width:360px; margin-bottom:1rem;">
+      <br>
+      <button class="btn btn-red" onclick="finishQuiz()">Submit Profile →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- event progression -->
+<section id="timeline">
+  <div class="container">
+    <h2 class="mb-4">Where Your Data Goes</h2>
+    <p class="mono text-dim" style="margin-bottom:3rem;">// Projected trajectory based on current industry trends.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <h3 class="mono" style="font-size:0.9rem; color:var(--steel); margin-bottom:0.5rem;">COLLECTION</h3>
+        <p><!-- YOUR TEXT — who collects it today. Google, Meta, Amazon, data brokers. -->[Your 2025 text here]</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2030</div>
+        <h3 class="mono" style="font-size:0.9rem; color:var(--steel); margin-bottom:0.5rem;">CONSOLIDATION</h3>
+        <p><!-- YOUR TEXT — data brokers, AI companies, governments buying it all. -->[Your 2030 text here]</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2035</div>
+        <h3 class="mono" style="font-size:0.9rem; color:var(--steel); margin-bottom:0.5rem;">SATURATION</h3>
+        <p><!-- YOUR TEXT — hyper-targeted ads, AI-generated personalization, consumerism. -->[Your 2035 text here]</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">2045</div>
+        <h3 class="mono" style="font-size:0.9rem; color:var(--steel-dim); margin-bottom:0.5rem; color:var(--red);">CONTROL</h3>
+        <p><!-- YOUR TEXT — mobility credit score, access restriction, past statements used against you. -->[Your 2045 text here]</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: 2035 AD MINIGAME — in development -->
+<!--
+<section id="game">
+  <div class="container">
+    <h2>You Are A Consumer. 2035.</h2>
+    ...
+  </div>
+</section>
+-->
+
+<!-- reveal  -->
+<section id="reveal">
+  <div class="container">
+    <h2 class="mb-4">Your Profile</h2>
+    <p class="mono text-dim" style="margin-bottom:2rem;">// Complete the assessment above to generate your profile.</p>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+
+      <!-- What you told us -->
+      <div class="reveal-panel">
+        <h3>What You Told Us</h3>
+        <div id="quizReveal">
+          <div class="reveal-row">
+            <span class="reveal-label">Status</span>
+            <span class="reveal-value text-dim">Assessment incomplete</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- known -->
+      <div class="reveal-panel">
+        <h3>What We Already Knew</h3>
+        <div id="passiveReveal">
+          <div class="reveal-row">
+            <span class="reveal-label">Browser</span>
+            <span class="reveal-value" id="rv-browser">—</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">OS</span>
+            <span class="reveal-value" id="rv-os">—</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Screen</span>
+            <span class="reveal-value" id="rv-screen">—</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Timezone</span>
+            <span class="reveal-value" id="rv-tz">—</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Language</span>
+            <span class="reveal-value" id="rv-lang">—</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Location (est.)</span>
+            <span class="reveal-value" id="rv-location">Fetching...</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Cookie banner</span>
+            <span class="reveal-value flagged" id="rv-cookie">Waiting...</span>
+          </div>
+          <div class="reveal-row">
+            <span class="reveal-label">Time on site</span>
+            <span class="reveal-value" id="rv-time">—</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--OUT-->
+<section id="outro">
+  <div class="container" style="max-width:640px;">
+    <h2 class="mb-4">Now What?</h2>
+    <p><!-- YOUR TEXT — drop the satire here, go direct. What can people actually do. -->[Your actionable steps here]</p>
+    <p><!-- YOUR CLOSER — something like your digital citizenship closing line. -->[Your closing line here]</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="https://ssd.eff.org" class="btn" target="_blank">EFF: Self-Defense Guide</a>
+      <a href="https://www.privacyrights.org" class="btn" target="_blank">Privacy Rights Clearinghouse</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid var(--steel-deep); padding:2rem 1.5rem; text-align:center;">
+  <p class="mono text-dim" style="font-size:0.72rem;">
+    // This site collects passive data to demonstrate digital footprint concepts. No data is stored or transmitted.
+    &nbsp;|&nbsp; Created for DCTC — Digital Citizenship &nbsp;|&nbsp; 2025
+  </p>
+</footer>
+
+<script src="achu.js"></script>
+</body>
+</html>
