@@ -162,5 +162,5 @@ function getNote(answer) {
   return notes[answer] || '';
 }
 
-// ── INIT ──
+// ── INIT ──────────────────────────────────────────────────────
 populatePassive();
