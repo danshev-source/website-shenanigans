@@ -1,4 +1,4 @@
-// ── TRACKING ─────────────────────────────────────────────────
+// cite footprint
 const footprint = {
   cookieChoice: null,
   cookieTimeMs: null,
@@ -9,7 +9,7 @@ const footprint = {
 
 const bannerAppeared = Date.now();
 
-// Passive data — populate reveal panel immediately
+// Passive data 
 function populatePassive() {
   const ua = navigator.userAgent;
 
@@ -55,7 +55,7 @@ setInterval(() => {
   if (el) el.textContent = mins > 0 ? `${mins}m ${s}s` : `${s}s`;
 }, 1000);
 
-// ── COOKIE BANNER ─────────────────────────────────────────────
+// Cookie
 function handleCookie(choice) {
   const elapsed = Date.now() - bannerAppeared;
   footprint.cookieChoice  = choice;
@@ -74,7 +74,7 @@ function handleCookie(choice) {
   }
 }
 
-// ── QUIZ FLOW ─────────────────────────────────────────────────
+// quest
 const TOTAL_STEPS = 5;
 
 function nextStep(current) {
@@ -105,7 +105,7 @@ function finishQuiz() {
   }, 300);
 }
 
-// ── QUIZ REVEAL ───────────────────────────────────────────────
+//  QUIZ show
 function populateQuizReveal() {
   const container = document.getElementById('quizReveal');
   container.innerHTML = '';
@@ -162,5 +162,5 @@ function getNote(answer) {
   return notes[answer] || '';
 }
 
-// ── INIT ──────────────────────────────────────────────────────
+// ── INIT ──
 populatePassive();
