@@ -42,7 +42,7 @@ function populatePassive() {
       document.getElementById('rv-location').classList.add('flagged');
     })
     .catch(() => {
-      document.getElementById('rv-location').textContent = 'Unable to fetch';
+      document.getElementById('rv-location').textContent = 'Blocked or unvailable';
     });
 }
 
